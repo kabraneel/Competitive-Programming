@@ -19,53 +19,57 @@ const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
 void solve(){
-  int n,m,q;
-  cin>>n>>m>>q;
-  set<int> S;
+  int n, k; cin>>n>>k;
+  string s; cin>>s;
 
-  // cout<<q<<'\n';
+  vector<int> ones;
+  int ans = 1;
 
-  bool pos = true;
-
-  FOR(i,0,q){
-
-    char x; int temp; cin>>x>>temp;
-    // cout<<sz(S)<<'\n';
-    // cout<<x<<' ';
-    if(x == '+'){
-      S.insert(temp);
-      if(sz(S)>m){
-        // cout<<"Inconsistent\n";
-        pos = false;
-      }
-      continue;
-    }
-
-    auto it = S.find(temp);
-    if(it == S.end()){
-      pos = false;
-    }
-
-    S.erase(temp);
-
+  for(int i = 0; i<n; i++){
+    if(s[i] == '1') ones.PB(i);
   }
 
-  if(!pos){
-    cout<<"Inconsistent\n";
+  if(!sz(ones)){
+    cout<<"0\n";
     return;
   }
 
-  cout<<"Consistent\n";
+  int n1 = sz(ones);
 
+  ones[0]++;
+
+  for(int i = 0; i<n1-1; i++){
+
+    if(ones[i+1] - ones[i] < k){
+      ones[i+1]++;
+      continue;
+    }
+
+    else if(ones[i+1] - ones[i] == k){
+      continue;
+    }
+
+    else if(ones[i+1] - ones[i] == k+1){
+      ones[i+1]--;
+    }
+
+    else{
+      ans++;
+      ones[i+1]++;
+    }
+
+  }
+
+  cout<<ans<<'\n';
 
 }
 
 signed main(){
 
   #ifndef ONLINE_JUDGE
-  freopen("inputfa.txt", "r", stdin);
-  freopen("outputfa.txt", "w", stdout);
-  freopen("error.txt","w",stderr);
+  freopen("/home/kabraneel/coding/inputfa.txt", "r", stdin);
+  freopen("/home/kabraneel/coding/outputfa.txt", "w", stdout);
+  freopen("/home/kabraneel/coding/error.txt","w",stderr);
   #endif
 
   ios_base::sync_with_stdio(false);
