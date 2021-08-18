@@ -9,7 +9,7 @@ using namespace std;
 #define all(x) (x).begin(),(x).end()
 #define MP make_pair
 #define sz(x) (int)(x.size())
-
+//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
 template<typename T,typename T1>T amax(T &a,T1 b){if(b>a)a=b;return a;}
 template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 
@@ -35,8 +35,8 @@ signed main(){
   cin.tie(NULL);
   auto start = chrono::high_resolution_clock::now();
 
-  int t;
-  cin>>t;
+  int t=1;
+  // cin>>t;
   while(t--){
     solve();
   }
