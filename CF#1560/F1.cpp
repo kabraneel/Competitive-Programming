@@ -18,127 +18,69 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
+set<int> S1;
+set<int> S2;
+
+vector<int> arr;
+vector<int> arr1;
+
+void pre(){
+  for(int i = 0; i<10; i++){
+    for(int j = i+1; j<10; j++){
+      for(int k = 0; k<11; k++){
+        for(int t = 0; t <= (1<<k) - 1; t++){
+          // string s;
+          int x = 0;
+          for(int z = 0; z<k; z++){
+            if(((1<<z) & t)){
+              // s.PB(i + '0');
+              x = x*10 + i;
+            }
+            else{
+              // s.PB(j + '0');
+              x = x*10 + j;
+            }
+          }
+          S1.insert(x);
+        }
+      }
+    }
+  }
+
+  for(int i = 0; i<10; i++){
+    int x = 0;
+    for(int k = 0; k<10; k++){
+      x = x*10 + i;
+      S2.insert(x);
+    }
+  }
+
+  for(auto v: S1){
+    arr.PB(v);
+  }
+  for(auto v: S2){
+    arr1.PB(v);
+  }
+}
+
+
+
 void solve(){
+
   int n,k; cin>>n>>k;
+
+  auto it1 = lower_bound(all(arr1), n);
+  int ans1 = *it1;
+
+  auto it2 = lower_bound(all(arr), n);
+  int ans2 = *it2;
+
   if(k == 1){
-    string ans;
-    string s = to_string(n);
-    int x = s.length();
-
-    // char temp = s[0];
-    // ans.PB(s[0]);
-    // bool pos = false;
-    // for(int i = 1; i<x; i++){
-    //   if(s[i] > temp){
-    //     pos = true;
-    //     break;
-    //   }
-    //   ans.PB(s[i]);
-    // }
-    for(int i = 0; i<x; i++){
-      ans.PB(s[0]);
-    }
-
-    if(stoi(ans) >= n){
-      cout<<ans<<'\n';
-      return;
-    }
-
-    // if(s)
-    ans.clear();
-    for(int i = 0; i<x; i++){
-      ans.PB(s[0]+1);
-    }
-    cout<<ans<<'\n';
+    cout<<ans1<<'\n';
     return;
   }
 
-
-  string ans;
-  string s = to_string(n);
-  int x = s.length();
-
-  map<int,int> M;
-  for(auto v: s){
-    M[v]++;
-  }
-
-  if(M.size() <= 2){
-    cout<<s<<'\n';
-    return;
-  }
-
-  if(x == 1){
-    cout<<s<<"\n";
-    return;
-  }
-
-  ans.PB(s[0]);
-  ans.PB(s[1]);
-  char temp1 = max(s[0], s[1]);
-  char temp2 = min(s[0], s[1]);
-  // cout<<temp1<<" "<<temp2<<"\n";
-  bool pos = true;
-  for(int i = 2; i<x; i++){
-    if(s[i] <= temp2){
-      ans.PB(temp2);
-    }
-    else if(s[i]<=temp1){
-      ans.PB(temp1);
-    }
-    else{
-      pos = false;
-      break;
-    }
-  }
-
-  if(pos){
-    cout<<ans<<'\n';
-    return;
-  }
-
-
-  // if(s[1]!=9){
-  //   ans.clear();
-  //   ans.PB(s[0]);
-  //   for(int i = 1; i<x; i++){
-  //     // find first occurence of s[1]?
-  //   }
-  // }
-  ans.clear();
-  ans.PB(s[0]);
-  // for(int i = 1;i<x; i++){
-  //   ans.PB(s[1])
-  // }
-  ans.PB(s[1] +1);
-  for(int i = 2; i<x; i++){
-    char j = s[1];
-    j++;
-    if(s[0] < j){
-      j = s[0];
-    }
-    // int j = min(s[1]+1, s[0]);
-    ans.PB(j);
-  }
-
-  // if()
-  if(stoi(ans) >= n){
-    cout<<ans<<'\n';
-    return;
-  }
-
-  ans.clear();
-  ans.PB(s[0]+1);
-
-  for(int i =1 ; i<x; i++){
-    ans.PB('0');
-  }
-  cout<<ans<<'\n';
-
-
-
-
-
+  cout<<min(ans1, ans2)<<'\n';
 }
 
 signed main(){
@@ -152,6 +94,7 @@ signed main(){
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   auto start = chrono::high_resolution_clock::now();
+  pre();
 
   int t;
   cin>>t;
