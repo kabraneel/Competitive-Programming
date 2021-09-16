@@ -23,52 +23,45 @@ void solve(){
   vector<int> arr(n);
   FOR(i,0,n) cin>>arr[i];
 
+  vector<int> distances(n, INF);
 
-  int i = 0;
-
-  while(i<k){
-    vector<int> counter;
-    if(arr[0]!=0){
-      counter.PB(n-1);
-      counter.PB(1);
+  FOR(i,0,n){
+    if(arr[i]){
+      distances[i] = 0;
     }
-    if(arr[n-1]){
-      counter.PB(n-2);
-      counter.PB(0);
-    }
+  }
 
-    for(int j = 1; j<n-1; j++){
-      if(arr[j]){
-        counter.PB(j-1);
-        counter.PB(j+1);
-      }
-    }
+  distances[0] = min(distances[0], 1 + distances[n-1]);
 
+  FOR(i,1,n){
+    distances[i] = min(1 + distances[i-1], distances[i]);
+  }
 
-    for(auto v: counter){
-      arr[v]++;
-    }
+  distances[n-1] = min(distances[n-1], 1 + distances[0]);
 
-    if(!(sz(counter))){
-      cout<<"0\n";
-      return;
-    }
+  for(int i = n-2; i>=0; i--){
+    distances[i] = min(distances[i], distances[i+1] + 1);
+  }
 
-    if(sz(counter) == 2*n){
-      break;
-    }
-    i++;
+  distances[0] = min(distances[0], 1 + distances[n-1]);
 
+  FOR(i,1,n){
+    distances[i] = min(1 + distances[i-1], distances[i]);
+  }
+
+  distances[n-1] = min(distances[n-1], 1 + distances[0]);
+
+  for(int i = n-2; i>=0; i--){
+    distances[i] = min(distances[i], distances[i+1] + 1);
   }
 
   int ans = 0;
-  for(auto v: arr){
-    ans+= v;
+  for(int i = 0; i<n; i++){
+    ans += 2*(max(k - distances[i], 0ll));
+    ans += arr[i];
   }
-  if(i != k)
-    ans += (2*n*(k-i-1));
-  cout<<ans<<'\n';
 
+  cout<<ans<<'\n';
 
 }
 
