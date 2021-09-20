@@ -19,7 +19,6 @@ const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
 void solve(){
-  int n; cin>>n;
   
 }
 
