@@ -19,23 +19,63 @@ const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
 void solve(){
-  int n; cin>>n;
-  if(n == 1){
-    cout<<"3\n";
+  int l,r; cin>>l>>r;
+
+  if(l == r){
+    cout<< (l % 3 == 0) <<'\n';
+    return;
   }
-  else if(n == 2){
-    cout<<"15\n";
+
+  if(r - l == 1){
+    int ans = (l%3 == 0) + (r%3 == 0);
+    cout<<ans<<'\n';
+    return;
   }
-  else{
-    for(int i = 0; i<2; i++){
-      cout<<"1";
-    }
-    for(int i = 3; i<n; i++){
-      cout<<"0";
-    }
-    cout<<"1";
-    cout<<'\n';
+
+  if(r - l == 2){
+    int ans = (l%3 == 0) + ((l+1)%3 == 0) + (r%3 ==0);
+    cout<<ans<<'\n';
+    return;
   }
+
+  if(l%3 == 0 && r%3 == 0){
+    cout<< (r - l)/3 + 1<<'\n';
+  }
+
+  if(l%3 == 0 && r%3 == 1){
+    cout<< (r - l - 1)/3 + 1<<'\n';
+  }
+
+  if(l%3 == 0 && r%3 == 2){
+    cout<< (r - l - 2)/3 + 1<<'\n';
+  }
+
+  if(l%3 == 1 && r%3 == 0){
+    cout<< (r - l)/3 + 1<<'\n';
+  }
+
+  if(l%3 == 1 && r%3 == 1){
+    cout<< (r - l - 1)/3 + 1<<'\n';
+  }
+
+  if(l%3 == 1 && r%3 == 2){
+    cout<< (r - l - 2)/3 + 1<<'\n';
+  }
+
+  if(l%3 == 2 && r%3 == 0){
+    cout<< (r - l)/3 + 1<<'\n';
+  }
+
+  if(l%3 == 2 && r%3 == 1){
+    cout<< (r - l - 1)/3 + 1<<'\n';
+  }
+
+  if(l%3 == 2 && r%3 == 2){
+    cout<< (r - l - 2)/3 + 1<<'\n';
+  }
+
+
+
 }
 
 signed main(){

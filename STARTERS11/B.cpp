@@ -20,22 +20,25 @@ const int INF = 1e18;
 
 void solve(){
   int n; cin>>n;
-  if(n == 1){
-    cout<<"3\n";
+
+  if(n == 2){
+    cout<<"-1 -1\n";
+    cout<<"-1 -1\n";
+    return;
   }
-  else if(n == 2){
-    cout<<"15\n";
-  }
-  else{
-    for(int i = 0; i<2; i++){
-      cout<<"1";
+
+  for(int i = 0; i<n; i++){
+    for(int j = 0; j<n; j++){
+      if(i == j){
+        cout<<"-1 ";
+      }
+      else{
+        cout<<"1 ";
+      }
     }
-    for(int i = 3; i<n; i++){
-      cout<<"0";
-    }
-    cout<<"1";
     cout<<'\n';
   }
+
 }
 
 signed main(){

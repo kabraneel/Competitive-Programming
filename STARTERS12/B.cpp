@@ -19,25 +19,29 @@ const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
 void solve(){
-  int n; cin>>n;
+  vector<int> times(3);
+  vector<int> points(3);
 
-  if(n == 2){
-    cout<<"-1 -1\n";
-    cout<<"-1 -1\n";
-    return;
+  FOR(i,0,3){
+    cin>>times[i];
+  }
+  FOR(i,0,3){
+    cin>>points[i];
   }
 
-  for(int i = 0; i<n; i++){
-    for(int j = 0; j<n; j++){
-      if(i == j){
-        cout<<"-1 ";
-      }
-      else{
-        cout<<"1 ";
+  int ans = 0;
+
+  for(int i = 0; i<=20; i++){
+    for(int j = 0; j<=20; j++){
+      for(int k = 0; k<=20; k++){
+        if(i*times[0] + j*times[1] + k*times[2] <= 240){
+          ans = max(ans, i*points[0] + j*points[1] + k*points[2]);
+        }
       }
     }
-    cout<<'\n';
   }
+
+  cout<<ans<<'\n';
 
 }
 

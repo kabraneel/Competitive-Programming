@@ -20,22 +20,32 @@ const int INF = 1e18;
 
 void solve(){
   int n; cin>>n;
-  if(n == 1){
-    cout<<"3\n";
+
+  if(n%4 != 0){
+    cout<<"NO\n";
+    return;
   }
-  else if(n == 2){
-    cout<<"15\n";
+
+  cout<<"YES\n";
+  vector<int> A;
+  vector<int> B;
+  for(int i = 1; i<=n; i+=4){
+    A.PB(i); A.PB(i + 3);
+    B.PB(i+1); B.PB(i+2);
   }
-  else{
-    for(int i = 0; i<2; i++){
-      cout<<"1";
-    }
-    for(int i = 3; i<n; i++){
-      cout<<"0";
-    }
-    cout<<"1";
-    cout<<'\n';
+
+  for(auto v: A){
+    cout<<v<<" ";
   }
+  cout<<'\n';
+
+  reverse(all(B));
+
+  for(auto v:B){
+    cout<<v<<" ";
+  }
+  cout<<"\n";
+
 }
 
 signed main(){

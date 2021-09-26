@@ -19,23 +19,51 @@ const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
 void solve(){
-  int n; cin>>n;
-  if(n == 1){
-    cout<<"3\n";
-  }
-  else if(n == 2){
-    cout<<"15\n";
-  }
-  else{
-    for(int i = 0; i<2; i++){
-      cout<<"1";
+  int n,k; cin>>n>>k;
+  string s; cin>>s;
+
+  int ans = 0;
+  for(int i = 0; i<k; i++){
+    // int count1 = 0;
+    // int count2 = 0;
+    vector<int> counts;
+    for(int j = i; j<n; j+=k){
+      counts.PB(s[j] - '0');
     }
-    for(int i = 3; i<n; i++){
-      cout<<"0";
+
+    int m = sz(counts);
+
+
+    if(m == 1){
+      ans += (counts[0] == 1);
+      continue;
     }
-    cout<<"1";
-    cout<<'\n';
+
+
+
+    for(int x = 0; x<m; x++){
+      if(counts[x] == 0) continue;
+
+      if(x == 0){
+        if(counts[0] == 1 && counts[1] == 0){
+          ans++;
+          counts[1] = 1;
+        }
+      }
+      else if (x == m - 1){
+        if(counts[x] == 1 && counts[x-1] == 0) ans++;
+      }
+      else{
+        if(counts[x] == 1 && (counts[x-1] ==0 && counts[x+1] == 0)){
+          counts[x+1] = 1;
+          ans++;
+        }
+      }
+    }
+
   }
+
+  cout<<ans<<"\n";
 }
 
 signed main(){

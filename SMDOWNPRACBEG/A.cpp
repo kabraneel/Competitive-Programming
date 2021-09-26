@@ -19,23 +19,7 @@ const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
 void solve(){
-  int n; cin>>n;
-  if(n == 1){
-    cout<<"3\n";
-  }
-  else if(n == 2){
-    cout<<"15\n";
-  }
-  else{
-    for(int i = 0; i<2; i++){
-      cout<<"1";
-    }
-    for(int i = 3; i<n; i++){
-      cout<<"0";
-    }
-    cout<<"1";
-    cout<<'\n';
-  }
+  
 }
 
 signed main(){

@@ -19,23 +19,49 @@ const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
 void solve(){
-  int n; cin>>n;
-  if(n == 1){
-    cout<<"3\n";
+  int n,m; cin>>n>>m;
+  vector<int> arr(m);
+  FOR(i,0,m){
+    cin>>arr[i];
   }
-  else if(n == 2){
-    cout<<"15\n";
-  }
-  else{
-    for(int i = 0; i<2; i++){
-      cout<<"1";
+
+  vector<int> farr;
+  farr.PB(INF);
+  int ans = 0;
+
+  for(int i = 0; i<m; i++){
+    //try to insert arr[i]
+    int x = sz(farr);
+    int ind = -1;
+    for(int j = 0; j<x; j++){
+      if(farr[j] >= arr[i]){
+        ind = j;
+        break;
+      }
     }
-    for(int i = 3; i<n; i++){
-      cout<<"0";
-    }
-    cout<<"1";
-    cout<<'\n';
+
+    // for(auto v: farr){
+    //   cout<<v<<" ";
+    // }
+    // cout<<'\n';
+    //
+    // cout<<ind<<'\n';
+
+    ans += ind;
+    farr.insert(farr.begin() + ind, arr[i]);
   }
+
+  // for(auto v: farr){
+  //   cout<<v<<" ";
+  // }
+  // cout<<'\n';
+
+  // cout<<ind<<'\n';
+
+
+
+  cout<<ans<<'\n';
+
 }
 
 signed main(){

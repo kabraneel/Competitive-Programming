@@ -19,23 +19,57 @@ const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
 void solve(){
-  int n; cin>>n;
-  if(n == 1){
-    cout<<"3\n";
-  }
-  else if(n == 2){
-    cout<<"15\n";
-  }
-  else{
-    for(int i = 0; i<2; i++){
-      cout<<"1";
+  int n,k; cin>>n>>k;
+  vector<int> arr(n);
+  FOR(i,0,n) cin>>arr[i];
+
+
+  int i = 0;
+
+  while(i<k){
+    vector<int> counter;
+    if(arr[0]!=0){
+      counter.PB(n-1);
+      counter.PB(1);
     }
-    for(int i = 3; i<n; i++){
-      cout<<"0";
+    if(arr[n-1]){
+      counter.PB(n-2);
+      counter.PB(0);
     }
-    cout<<"1";
-    cout<<'\n';
+
+    for(int j = 1; j<n-1; j++){
+      if(arr[j]){
+        counter.PB(j-1);
+        counter.PB(j+1);
+      }
+    }
+
+
+    for(auto v: counter){
+      arr[v]++;
+    }
+
+    if(!(sz(counter))){
+      cout<<"0\n";
+      return;
+    }
+
+    if(sz(counter) == 2*n){
+      break;
+    }
+    i++;
+
   }
+
+  int ans = 0;
+  for(auto v: arr){
+    ans+= v;
+  }
+  if(i != k)
+    ans += (2*n*(k-i-1));
+  cout<<ans<<'\n';
+
+
 }
 
 signed main(){

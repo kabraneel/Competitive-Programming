@@ -18,24 +18,25 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
+int N = 405;
+vector<int> adj[N];
+set<pair<int,int>> S;
+vector<int> pred(N);
+
+void dfs(int i){
+
+}
+
 void solve(){
   int n; cin>>n;
-  if(n == 1){
-    cout<<"3\n";
+  int m; cin>>m;
+  for(int i = 0; i<m; i++){
+    int u,v; cin>>u>>v;
+    adj[u-1].PB(v-1);
   }
-  else if(n == 2){
-    cout<<"15\n";
-  }
-  else{
-    for(int i = 0; i<2; i++){
-      cout<<"1";
-    }
-    for(int i = 3; i<n; i++){
-      cout<<"0";
-    }
-    cout<<"1";
-    cout<<'\n';
-  }
+
+  dfs(0);
+
 }
 
 signed main(){

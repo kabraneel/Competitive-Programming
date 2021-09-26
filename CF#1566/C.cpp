@@ -20,22 +20,59 @@ const int INF = 1e18;
 
 void solve(){
   int n; cin>>n;
-  if(n == 1){
-    cout<<"3\n";
-  }
-  else if(n == 2){
-    cout<<"15\n";
-  }
-  else{
-    for(int i = 0; i<2; i++){
-      cout<<"1";
+
+  char arr[n][2];
+  FOR(j,0,2){
+    FOR(i,0,n){
+        cin>>arr[i][j];
     }
-    for(int i = 3; i<n; i++){
-      cout<<"0";
-    }
-    cout<<"1";
-    cout<<'\n';
   }
+
+  int ans = 0;
+  // bool check  = false;
+  vector<bool> taken(n);
+  int count = 0;
+  FOR(i,0,n){
+
+    // if(arr[i][0] == '1' && arr[i][1] == '1'){
+    //   check = true;
+    // }
+
+    if((arr[i][0] == '1' && arr[i][1] == '0') || (arr[i][0] == '0' && arr[i][1] == '1')){
+      ans += 2;
+      // count = 0;
+      continue;
+    }
+
+    if(arr[i][0] == '0' && arr[i][1] == '0'){
+      if( (i-1)>=0 && !taken[i-1] && (arr[i-1][0] == '1' && arr[i-1][1] == '1')){
+        taken[i-1] = true;
+        ans+= 2;
+      }
+
+      else if((i+1)<n && !taken[i+1] && (arr[i+1][0] == '1' && arr[i+1][1] == '1')){
+        ans += 2;
+        taken[i+1] = true;
+      }
+      // count++;
+      else{
+        ans+=1;
+      }
+    }
+
+    // if(arr[i][0] == '1' && arr[i][1] == '1'){
+    //   if(count > 0){
+    //     ans += 1 + count;
+    //     count = 0;
+    //   }
+    // }
+  }
+
+  ans += count;
+
+  cout<<ans<<'\n';
+
+
 }
 
 signed main(){

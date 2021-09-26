@@ -20,22 +20,33 @@ const int INF = 1e18;
 
 void solve(){
   int n; cin>>n;
-  if(n == 1){
-    cout<<"3\n";
+  int winner = 0;
+
+  while(n>0){
+      // if(n%4 == 0){
+      //   winner =
+      if(n%4 == 0){
+        winner ^= 1;
+        break;
+      }
+      // }
+      if(n%2 == 1){
+        winner = winner ^ 1;
+        n--;
+      }
+      else{
+        winner = winner ^ 1;
+        n = n/2;
+      }
   }
-  else if(n == 2){
-    cout<<"15\n";
+
+  if(winner == 1){
+    cout<<"Alice\n";
   }
   else{
-    for(int i = 0; i<2; i++){
-      cout<<"1";
-    }
-    for(int i = 3; i<n; i++){
-      cout<<"0";
-    }
-    cout<<"1";
-    cout<<'\n';
+    cout<<"Bob\n";
   }
+
 }
 
 signed main(){

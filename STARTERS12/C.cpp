@@ -19,56 +19,37 @@ const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
 void solve(){
-  int n,k; cin>>n>>k;
-  vector<int> arr(n);
-  FOR(i,0,n) cin>>arr[i];
+  int n,m;
+  cin>>n>>m;
+  n--;
+  m--;
+  int x,y; cin>>x>>y;
 
-
-  int i = 0;
-
-  while(i<k){
-    vector<int> counter;
-    if(arr[0]!=0){
-      counter.PB(n-1);
-      counter.PB(1);
-    }
-    if(arr[n-1]){
-      counter.PB(n-2);
-      counter.PB(0);
-    }
-
-    for(int j = 1; j<n-1; j++){
-      if(arr[j]){
-        counter.PB(j-1);
-        counter.PB(j+1);
-      }
-    }
-
-
-    for(auto v: counter){
-      arr[v]++;
-    }
-
-    if(!(sz(counter))){
-      cout<<"0\n";
-      return;
-    }
-
-    if(sz(counter) == 2*n){
-      break;
-    }
-    i++;
-
+  if(y > 2*x){
+    cout<< (n+m) * x <<'\n';
+    return;
   }
 
-  int ans = 0;
-  for(auto v: arr){
-    ans+= v;
-  }
-  if(i != k)
-    ans += (2*n*(k-i-1));
-  cout<<ans<<'\n';
+  int ans = (n + m)*x;
 
+  int mex = max(n, m);
+  int men = min(n,m);
+
+  // cout<< men * y + (mex - men) * x <<'\n';
+  int diags = mex/men;
+  // if(diags % 2 == 0) diags--;
+  // cout<< diags<<'\n';
+
+  // cout<< diags*men*y + (mex - men*diags)*x<<'\n';
+  if(diags%2 == 1){
+    cout<<min(ans,diags * men * y + (mex - men * diags) * x) <<'\n';
+    return;
+  }
+
+  int ans1 = men * diags * y + (mex - men * diags) * y + ((men) * (diags + 1) - mex) * x;
+  int ans2 = men * (diags - 1 )* y + (mex  - men * (diags - 1)) * x;
+  cout<<ans1<<" "<<ans2<<'\n';
+  cout << min(min(ans,ans1), ans2)<<'\n';
 
 }
 
