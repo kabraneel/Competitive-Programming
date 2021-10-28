@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 1e5 + 5;
+const int N = 2005;
 
 int t[4*N];
 
@@ -12,7 +12,7 @@ void update(int v, int tl, int tr, int ind, int val){
     return;
   }
 
-  if(id>tr || id<tl){
+  if(ind>tr || ind<tl){
     return;
   }
 
@@ -27,7 +27,7 @@ int query(int v, int tl, int tr, int l, int r){
 
   //fully outside
   if(tl>r || tr<l){ //tl ... tr .. l ... r or l..r .. tl.. tr
-    return;
+    return -1;
   }
 
   if(l<=tl && tr<=r){//l ...tl ...tr ... r
@@ -109,5 +109,5 @@ int main(){
   }
 
 
-
+  return  0;
 }
