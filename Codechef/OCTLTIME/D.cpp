@@ -169,14 +169,14 @@ bool isprime(int n){
 
 void solve(){
   int n = 2000;
-  // cin>>n;
+  cin>>n;
 
   segtree s(n);
   int arr[n];
 
   for(int i = 0; i<n; i++) {
     arr[i] = i+1;
-    // cin>>arr[i];
+    cin>>arr[i];
   }
   // s.build(arr, 1, 0, n-1);
   //if more than 2 primes, exit??
@@ -233,14 +233,21 @@ void solve(){
       // x1 = __gcd(s.qeury(i+1))
       int x1 = 0;
       if(i){
-        x1 = __gcd(s.qeury(0,i-1).v);
+        x1 = __gcd(s.query(0,i-1).v, x1);
       }
 
-      x1 = __gcd(s.query(i+1, ))
+      if(i+1<n){
+        x1 = __gcd(s.query(i+1, j-1).v, x1);
+      }
+
+      if(j+1<n)
+        x1 = __gcd(x1, s.query(j+1, n-1).v);
+
+      x1 = __gcd(x1, arr[i]*arr[j]);
 
       // s.rupd(i, i, temp1*temp2);
       // s.rupd(j, j, temp1*temp2);
-      ans = max(ans, s.query(0, n-1).v);
+      ans = max(ans, x1);
 
       // for(int k = 0; k<n; k++){
       //   // cout<<arr[i]<<" ";

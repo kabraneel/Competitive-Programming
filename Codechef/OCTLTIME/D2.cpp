@@ -1,96 +1,104 @@
 #include <bits/stdc++.h>
+#include <chrono>
 using namespace std;
+#define int long long
+#define PB push_back
+#define all(x) (x).begin(),(x).end()
+#define MP make_pair
+template<typename T,typename T1>T amax(T &a,T1 b){if(b>a)a=b;return a;}
+template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 
-const int N = 2005;
+#define FOR(i,a,b) for(int i=a; i<b; i++)
 
-int t[4*N];
+const int N = 2e5 + 5;
+const int LOG = 19;
 
-void update(int v, int tl, int tr, int ind, int val){
+int sparse[N][LOG];
 
-  if(tl == ind && tr == ind){
-    t[v]  = val;
-    return;
-  }
+int query(int l, int r){
 
-  if(ind>tr || ind<tl){
-    return;
-  }
+  int len = r - l + 1;
+  int k = 31 - __builtin_clz(len);
 
-  int tm = (tl + tr)/2;
-  update(2*v, tl, tm, ind, val);
-  update(2*v+1, tm+1, tr, ind, val);
+  return __gcd(sparse[l][k], sparse[r-(1<<k)+1][k]);
 
-  t[v] = __gcd(t[2*v], t[2*v+1]);
-}
-
-int query(int v, int tl, int tr, int l, int r){
-
-  //fully outside
-  if(tl>r || tr<l){ //tl ... tr .. l ... r or l..r .. tl.. tr
-    return -1;
-  }
-
-  if(l<=tl && tr<=r){//l ...tl ...tr ... r
-    return t[v];
-  }
-
-  int ans = 0;
-  int tm = (tl + tr)/2;
-  ans = __gcd(ans , query(2*v, tl, tm, l, r));
-  ans = __gcd(ans , query(2*v+1, tm+1, tr, l, r));
-
-  return ans;
 }
 
 void solve(){
 
-    int n; cin>>n;
-    vector<int> arr(n);
+  int n; cin>>n;
+  // int q; cin>>q;
 
-    for(int i = 0; i<n; i++){
-      cin>>arr[i];
-      update(1, 0, n-1, i, arr[i]);
+  // if(n == 1){
+  //   cout<<"1\n";
+  //   return;
+  // }
+
+  vector<int> arr(n);
+
+  FOR(i,0,n) {
+    cin>>arr[i];
+    sparse[i][0] = arr[i];
+  }
+
+  // sparse[0][1] =
+  for(int j = 1; j < LOG; j++){
+    for(int i = 0; i+(1<<(j)) -1 <  n ; i++){
+      sparse[i][j] = __gcd(sparse[i][j-1], sparse[i + (1<<(j-1))][j-1]);
+      // cout<<"here\n";
     }
+  }
 
-    int ans = 0;
+  int ans = 0;
 
-    for(int i = 0; i<n; i++){
-      for(int j = i+1; j<n; j++){
+  for(int i = 0; i<n; i++){
+    for(int j = i+1; j<n; j++){
 
-        // cout<<"here\n";
-
-        int temp1 = arr[i];
-        int temp2 = arr[j];
-        //
-        update(1, 0, n-1, i, temp1*temp2);
-        // update(j, j, temp1*temp2);
-        update(1, 0, n-1, j, temp1*temp2);
-
-        ans = max(ans, query(1, 0, n-1, 0, n-1));
-
-        // for(int k = 0; k<n; k++){
-        //   // cout<<arr[i]<<" ";
-        //   cout<< s.query(k,k).v << " ";
-        // }
-        // cout<<'\n';
-        //
-        // cout<<s.query(0, n-1).v<<"\n";
-        //
-        // s.rupd(i, i, temp1);
-        // s.rupd(j, j, temp2);
-
-        update(1, 0, n-1, i, temp1);
-        // update(j, j, temp1*temp2);
-        update(1, 0, n-1, j, temp2);
-
+      // cout<<"here\n";
+      // int x1 = s.qeury(0, i).v;
+      // x1 = __gcd(s.qeury(i+1))
+      int x1 = 0;
+      if(i){
+        x1 = __gcd(query(0,i-1), x1);
       }
-    }
 
-    cout<<ans<<'\n';
+      if(i+1<n && i+2<=j){
+        x1 = __gcd(query(i+1, j-1), x1);
+      }
+
+      if(j+1<n){
+        x1 = __gcd(x1, query(j+1, n-1));
+      }
+
+      x1 = __gcd(x1, arr[i]*arr[j]);
+
+      // s.rupd(i, i, temp1*temp2);
+      // s.rupd(j, j, temp1*temp2);
+      ans = max(ans, x1);
+      // cout<<i<<" "<<j<<" "<<x1<<'\n';
+
+      // for(int k = 0; k<n; k++){
+      //   // cout<<arr[i]<<" ";
+      //   cout<< s.query(k,k).v << " ";
+      // }
+      // cout<<'\n';
+      //
+      // cout<<s.query(0, n-1).v<<"\n";
+      //
+      // s.rupd(i, i, temp1);
+      // s.rupd(j, j, temp2);
+    }
+  }
+
+  cout<<ans<<'\n';
+
+
+  // cout<<ans<<"\n";
+
 
 }
 
-int main(){
+signed main(){
 
   #ifndef ONLINE_JUDGE
   freopen("/home/kabraneel/coding/inputfa.txt", "r", stdin);
@@ -108,6 +116,11 @@ int main(){
     solve();
   }
 
+  auto end = chrono::high_resolution_clock::now();
+  double time_taken = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
-  return  0;
+  time_taken *= 1e-9;
+
+  cerr <<fixed<<time_taken<<setprecision(9)<< " sec"<<endl;
+  return 0;
 }
