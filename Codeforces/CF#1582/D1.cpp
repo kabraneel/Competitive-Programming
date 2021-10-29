@@ -20,21 +20,65 @@ const int INF = 1e18;
 
 void solve(){
   int n; cin>>n;
-  int ones = 0;
-  int zeros = 0;
+  vector<int> arr(n);
+  int minele = INF;
 
   for(int i = 0; i<n; i++){
-    int x; cin>>x;
-    ones += (x == 1);
-    zeros += (x == 0);
+    cin>>arr[i];
+    minele = min(minele, abs(arr[i]));
+    // if(minele == )
   }
 
-  int ans = ones;
-  for(int i = 0; i<zeros; i++){
-    ans = ans * 2;
+  // sort(all(arr));
+
+  int tsum = 0;
+  vector<int> b(n); 
+  for(int i = 0; i<n; i++){
+    int temp = arr[i];
+    if(temp < 0){
+      temp *= -1;
+    }
+
+    if(arr[i] % minele != 0){
+      // make this positive
+
+      b[i] = (arr[i]/temp) * (minele / __gcd(temp, minele));
+    }
+
+    else{
+      b[i] = arr[i]/temp;
+    }
+
+    tsum += arr[i] * b[i];
   }
 
-  cout<<ans<<'\n';
+  for(int i = 0; i<n; i++){
+    if(abs(arr[i]) == minele){
+      tsum -= minele;
+      b[i] = -1 * (minele/arr[i]) * (tsum / minele);
+      break;
+    }
+  }
+
+  // cout<<tsum<<'\n';
+  // cout<<minele *
+
+  for(auto v: b){
+    cout<<v<<" ";
+  }
+
+  cout<<'\n';
+
+
+
+
+
+
+
+
+
+
+
 }
 
 signed main(){
