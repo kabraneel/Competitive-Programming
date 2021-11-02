@@ -19,17 +19,13 @@ const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
 void solve(){
-  int x,y; cin>>x>>y;
-
-  if(y < x)
-    cout<< (x*y)/(__gcd(x, y)) + y <<'\n';
-
-  
-
-  // else{
-  //
-  // }
-
+     int x, y; cin >> x >> y;
+    if (x <= y) {
+      cout << y - y % x / 2 << '\n';
+    }
+    else {
+      cout << x + y << '\n';
+    }
 }
 
 signed main(){
