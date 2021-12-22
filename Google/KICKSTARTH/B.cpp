@@ -19,8 +19,9 @@ const int MOD = 1e9 + 7;
 // const int INF = 1e18;
 
 void solve(){
+  int n; cin>>n;
   string s; cin>>s;
-  int n = s.length();
+
   vector<vector<int>> Y(n, vector<int> (3,0));
 
   // YBR
@@ -81,7 +82,35 @@ void solve(){
 
   }
 
-  for(int j = 0; j<)
+  // for(int i = 0; i<3; i++){
+  //   for(int j = 0; j<n; j++){
+  //     cout<<Y[j][i]<<' ';
+  //   }
+  //   cout<<'\n';
+  // }
+
+  int ans = 0;
+
+  for(int j = 0; j<3; j++){
+    //     Y[i][j]
+    int count = 0;
+    int key = Y[0][j];
+
+    int i = 0;
+    // for(int i = 1; )
+    while(i<n){
+      key = Y[i][j];
+      while(i<n && Y[i][j] == key){
+        i++;
+      }
+      if(key == 1)
+        count++;
+    }
+    // cout<<count<<'\n';
+    ans += count;
+  }
+
+  cout<<ans<<'\n';
 }
 
 signed main(){
