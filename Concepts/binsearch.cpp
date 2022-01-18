@@ -18,7 +18,32 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
+const int N = 2e5;
+map<int,vector<int>> M;
+int n;
+vector<int> arr(N);
+
+bool check(int mid){
+
+  for(auto v: M){
+    
+  }
+
+}
+
+
+
 void solve(){
+
+  M.clear();
+  cin>>n;
+
+  for(int i = 0; i<n; i++) cin>>arr[i];
+
+
+  for(int i = 0; i<n; i++){
+      M[arr[i]].PB(i);
+  }
 
   int l = 1, r = n;
   int ans = -1;
