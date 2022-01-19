@@ -27,8 +27,35 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
+vector<int> arr;
+
+void pre(){
+	for(int i = 1; i<=(1ll<<20); i++){
+		int count = 0;
+		for(int j = 0; j<32; j++){
+			if(i & (1ll<<j)){
+				count++;
+			}
+		}
+
+		if(count % 2 == 0){
+			arr.PB(i);
+		}
+	}
+}
+
+
 void solve(){
-	
+	// for(int i = 0; i<100; i++){
+	// 	cout<<arr[i]<<" ";
+	// }
+	// cout<<'\n';
+	int n; cin>>n;
+	for(int i = 0; i<n; i++){
+		cout<<arr[i]<<" ";
+	}
+	cout<<'\n';
+	// cout<<sz(arr)<<'\n';
 }
 
 signed main(){
@@ -43,6 +70,7 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 auto start = chrono::high_resolution_clock::now();
 
+pre();
 int t=1;
 cin>>t;
 while(t--){

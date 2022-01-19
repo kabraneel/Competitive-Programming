@@ -27,14 +27,86 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
-void solve(){
-	int k; cin>>k;
-	int ans = 0;
-	while(k%2 == 0){
-		ans++;
-		k = k/2;
+
+vector<int> A;
+vector<int> B;
+int n; 
+string a; 
+string b; 
+
+int dp[1005][1005];
+
+int solver(int i, int j, int sum1, int sum2){
+	if(i == sz(A) && j == sz(B)){
+		return 0;
 	}
-	cout<<ans<<'\n';
+
+	if(j == sz(B)){
+		return dp[i][j] = A[i] + solver(i+1, j, 0,0);
+	}
+
+	if(i == sz(A)){
+		return dp[i][j] = B[j] + solver(i, j+1, 0, 0);
+	}
+
+	if(dp[i][j] != -1){
+		return dp[i][j];
+	}
+
+
+	return dp[i][j] = min(A[i] + B[j] + solver(i+1, j, 0, 0), A[i] + B[j] + solver(i, j+1, 0, 0));
+
+
+
+}
+
+void solve(){
+	cin>>n;
+	cin>>a;
+	cin>>b;	
+
+	A.clear();
+	B.clear();
+
+	for(int i = 0; i<n+2; i++){
+		for(int j = 0; j<n+2; j++){
+			dp[i][j] = -1;
+		}
+	}
+
+	int tsuma = 0;
+	int tsumb = 0;
+
+	int count = 0;
+	for(int i = n-1; i>=0; i--){
+		count += (a[i] == '0');
+		if(a[i] == '1') A.PB(count);
+	}
+
+	for(auto v: A){
+		tsuma += v;
+	}
+
+	count = 0;
+
+	for(int i = n-1; i>=0; i--){
+		count += (b[i] == '0');
+		if(b[i] == '1') B.PB(count);
+	}
+
+	for(auto v: B){
+		tsumb += v;
+	}
+
+
+	reverse(all(A));
+	reverse(all(B));
+
+	debug(A);
+	debug(B);
+	cout<<solver(0,0,tsuma, tsumb)<<'\n';
+
+
 }
 
 signed main(){
