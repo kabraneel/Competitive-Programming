@@ -25,199 +25,53 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 
 #define FOR(i,a,b) for(int i=a; i<b; i++)
 
-const int MOD = 1e9 + 7;
+const int MOD = 998244353;
 const int INF = 1e18;
 
 void solve(){
-
-	map<string,int> M31;
-	map<string,int> M32;
-	map<string,int> M33;
-
-	map<string,int> M21;
-	map<string,int> M22;
-
-	map<string,int> M1;
-	vector<string> arr;
 	int n; cin>>n;
-	int count = 0;
+	vector<int> a(n);
+	vector<int> b(n);
 
-	for(int i = 0; i<n; i++){
-		string s; cin>>s;
-		arr.PB(s);
+	for(int i = 0; i<n; i++) cin>>a[i];
+	for(int i = 0; i<n; i++) cin>>b[i];
 
-		string temp = s;
-		reverse(all(temp));
 
-		if(temp == s) count++;
+	vector<vector<int>> dp(3005, vector<int> (3005, 0));
 
-		// M3[]
-		string s1;
-		if(s.length() == 3){
-			// M3[]
-			s1.PB(s[2]);
-			// M31[s1]++;
-			if(s[0] == s[1]){
-				M31[s1] = i;
-			}
-			// else M31[s1].PB(i);
-			// M2[]
-			// s1.PB(s[1]);
-			string s2; s2.PB(s[1]); s2.PB(s[2]);
-			// if(sz(M32[s2]))
-			M32[s2] = i;
-			// else M32[s2].PB(i);
-		
-		
-
-			// s1.PB(s[2]);
-			string s3 = s;
-			reverse(all(s3));
-			// if(sz(M33[s3]))
-			M33[s3] = i;
-			// else M33[s3].PB(i);
-		}
-
-		if(s.length() == 2){
-			s1.PB(s[1]);
-			// if(sz(M21[s1]))
-			M21[s1] = i;
-			// M2[]
-			// s1.PB(s[1]);
-			string s2 = s;
-			reverse(all(s));
-			// if(sz(M22[s2]))
-				M22[s2] = i;
-			// else M22[s2].PB(i);
-		}
-
-		if(s.length() == 1){
-			count++;
-			s1.PB(s[0]);
-			// if(sz(M1[s1])){
-			M1[s1] = i;
-			// }
-			// else M1[s1].PB(i);
-		}
-
+	for(int i = a[0]; i<=b[0]; i++){
+		dp[i][0] = 1;
 	}
 
-	debug(count);
-	if(count){
-		cout<<"YES\n";
-		return;
+	for(int i = 1; i<n; i++){
+		int sum = 0;
+		for(int j = 0; j<a[i]; j++){
+			sum += dp[j][i-1];
+		}
+		for(int j = a[i]; j<=b[i]; j++){
+			sum += dp[j][i-1];
+			sum = sum % MOD;
+			dp[j][i] = sum;
+			dp[j][i] = dp[j][i]%MOD;
+		}
 	}
 
-	// debug(M33);
-	// debug(M32);
-	// debug(M31);
-	// debug(M22);
-	// for(auto v: M32){
-	// 	cout<<v.first<<'\n';
-	// 	for(auto u: v.second){
-	// 		cout<<u<<" ";
+	// debug(dp);
+	// for(int i = 0; i<=5; i++){
+	// 	for(int j = 0; j<=5; j++){
+	// 		cout<<dp[i][j]<<" ";
 	// 	}
 	// 	cout<<'\n';
 	// }
-	// debug(M21);
-	// debug(M1);
 
-
-	// for(auto v: M3){
-
-	// }
-	for(int i = 0; i<n; i++){
-		//try to find match for temp[i]
-		string temp = arr[i];
-		if(temp.length() == 1){
-			//for all len 3 strings, x x temp[0] works
-			string s1; s1.PB(temp[0]);
-			if(M31.find(s1) != M31.end()){
-				if(M31[s1] > i){	
-					cout<<"YES\n";
-					return;
-				}
-			}
-			//for all 2 len strings x temp[0] works
-			string s2; s2.PB(temp[0]);
-			if(M21.find(s2)!= M21.end()){
-				if(M21[s2] > i){	
-					cout<<"YES\n";
-					return;
-				}
-			}
-
-			//for all 1 length strings temp[0] works
-			string s3; s3.PB(temp[0]);
-			if(M1.find(s3) != M1.end()){
-				if(M1[s3] > i){	
-					cout<<"YES\n";
-					return;
-				}
-			}
-		}
-
-		if(temp.length() == 2){
-			//for all len 3 strings, x temp[1] temp[0] works
-			string s1; s1.PB(temp[1]); s1.PB(temp[0]);
-			if(M32.find(s1)!=M32.end()){
-				if(M32[s1] > i){	
-					cout<<"YES\n";
-					return;
-				}
-			}
-
-			//for all len 2 strings, temp[1] temp[0] works
-			string s2; s2.PB(temp[1]); s2.PB(temp[0]);
-			if(M22.find(s2) != M22.end()){
-				if(M22[s2] > i){	
-					cout<<"YES\n";
-					return;
-				}
-			}
-
-			//for all len 1 strings, temp[0] works
-			string s3; s3.PB(temp[0]);
-			if(M1.find(s3) != M1.end()){
-				if(M1[s3] > i){	
-					cout<<"YES\n";
-					return;
-				}
-			}
-
-		}
-
-		if(temp.length() == 3){
-			//for all three length strings, temp[2] temp[1] temp[0] works
-			string s1; s1.PB(temp[2]); s1.PB(temp[1]); s1.PB(temp[0]);
-			if(M33.find(s1)!=M33.end()){
-				if(M33[s1] > i){	
-					cout<<"YES\n";
-					return;
-				}
-			}
-
-			//for all len 2 strings, temp[1] temp[0] works
-			string s2; s2.PB(temp[1]); s2.PB(temp[0]);
-			if(M22.find(s2) != M22.end()){
-				if(M22[s2] > i){	
-					cout<<"YES\n";
-					return;
-				}
-			}
-
-			//for all len 1 strings, temp[0] works, if(temp[1] == temp[2])
-			string s3; s3.PB(temp[0]);
-			if(M1.find(s3) != M1.end()){
-				if(M1[s3] > i && temp[1] == temp[2]){	
-					cout<<"YES\n";
-					return;
-				}
-			}
-		}
+	int ans = 0;
+	for(int i = a[n-1]; i<=b[n-1]; i++){
+		ans += dp[i][n-1];
+		ans = ans% MOD;
+		// cout<<ans<<'\n';
 	}
 
-	cout<<"NO\n";
+	cout<<ans<<'\n';
 
 
 }
@@ -235,7 +89,7 @@ cin.tie(NULL);
 auto start = chrono::high_resolution_clock::now();
 
 int t=1;
-cin>>t;
+// cin>>t;
 while(t--){
   solve();
 }
