@@ -14,21 +14,6 @@ using namespace std;
 #define debug(x...)
 #define debugln(x...)
 #endif
-#define KabraCodeAbra
-
-
-/*
-
-Solution for Codeforces Educational Round 125 Problems A-D : Contest Link.
-All codes can be found at my Github Repository in the following link(https://github.com/kabraneel/Competitive-Programming/tree/main/Codeforces/CF%231657).
-
-Subscribe for more videos. 
-Feel free to drop your codes in the comments section if you need help debugging!
-
-*/
-
-
-
 
 #define PB push_back
 #define all(x) (x).begin(),(x).end()
@@ -43,40 +28,99 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
-// Kabra Code Abra
+vector<int> vals;
+
+void pre(){
+
+	int fact = 1;
+	int i = 2;
+	while(true){
+		
+		if(fact > 1e12){
+			break;
+		}
+		vals.PB(fact);
+		fact = fact * i;
+		i++;
+
+	}
+
+	// fact = 1;
+	// while(true){
+
+	// 	if(fact > 1e12){
+	// 		break;
+	// 	}
+
+	// 	vals.PB(fact);
+	// 	fact = fact * 2;
+
+	// }
+
+}
+
+int ans = INF;
+// int dp(int n, int m, int count){
+
+// 	if(n == 0){
+// 		return -1;
+// 	}
+
+// 	if(m == 0){
+// 		ans = min(ans, count);
+// 	}
+
+// 	//two options
+// 	// either I take it
+// 	// or i dont
+
+
+
+// }
+
 
 void solve(){
-	// set<int> S;
-	map<int,int> M;
-	int k;
+
 	int n; cin>>n;
-	cin>>k;
-	vector<int> arr(n);
+	
+	debug((vals));
 
-	for(int i = 0; i<n; i++){
-		cin>>arr[i];
-		M[arr[i]]++;
-	}
+	// I wanna reduce one number I can using factorials
+	//then use bits to solve it?
+	int ans = INF;
+	// map<int,
 
-	debug(M);
+	for(int i = 0; i<(1<<14); i++){
 
-	for(int i = 0; i<n; i++){
-		// if(k - arr[i] == arr[i]){
-		// 	if(M[arr[i]] > 2){
-		// 		cout<<"YES\n";
-		// 		return;
-		// 	}
-		// 	continue;
-		// }
-
-		if(M.find(arr[i] - k) != M.end()){
-			cout<<"YES\n";
-			return;
+		//
+		int tsum = 0;
+		int count = 0;
+		for(int j = 0; j < 14; j++){
+			if((i >> j) & 1){
+				//then i know that this should be included
+				tsum += vals[j];
+				count++;
+			}
 		}
+
+		int rem = n - tsum;
+		if(rem < 0){
+			continue;
+		}
+		// debug(rem);
+
+
+		for(int i = 0; i<40; i++){
+			// cout<<(1ll<<i)<<'\n';
+			if(rem & (1ll<<i)){
+				count++;
+			}
+		}
+
+		ans = min(ans, count);
 	}
 
-	cout<<"NO\n";
-	return;
+	cout<<ans<<'\n';
 
 }
 
@@ -91,7 +135,7 @@ signed main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	auto start = chrono::high_resolution_clock::now();
-
+	pre();
 	int t=1;
 	cin>>t;
 	while(t--){

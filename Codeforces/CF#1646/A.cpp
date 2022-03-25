@@ -14,21 +14,6 @@ using namespace std;
 #define debug(x...)
 #define debugln(x...)
 #endif
-#define KabraCodeAbra
-
-
-/*
-
-Solution for Codeforces Educational Round 125 Problems A-D : Contest Link.
-All codes can be found at my Github Repository in the following link(https://github.com/kabraneel/Competitive-Programming/tree/main/Codeforces/CF%231657).
-
-Subscribe for more videos. 
-Feel free to drop your codes in the comments section if you need help debugging!
-
-*/
-
-
-
 
 #define PB push_back
 #define all(x) (x).begin(),(x).end()
@@ -43,41 +28,25 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
-// Kabra Code Abra
-
 void solve(){
-	// set<int> S;
-	map<int,int> M;
-	int k;
-	int n; cin>>n;
-	cin>>k;
-	vector<int> arr(n);
-
-	for(int i = 0; i<n; i++){
-		cin>>arr[i];
-		M[arr[i]]++;
+	int n; int s;
+	cin>>n>>s;
+	n = n*n;
+	int ans = 0;
+	
+	if(n == 1){
+		cout<<s<<'\n';
+		return;
 	}
+	
+	// while(s >= n){
+	// 	s = s/n;
+	// 	debug(s);
+	// 	ans++;
+	// }
+	cout<<s/n<<'\n';
 
-	debug(M);
-
-	for(int i = 0; i<n; i++){
-		// if(k - arr[i] == arr[i]){
-		// 	if(M[arr[i]] > 2){
-		// 		cout<<"YES\n";
-		// 		return;
-		// 	}
-		// 	continue;
-		// }
-
-		if(M.find(arr[i] - k) != M.end()){
-			cout<<"YES\n";
-			return;
-		}
-	}
-
-	cout<<"NO\n";
-	return;
-
+	// cout<<ans<<'\n';
 }
 
 signed main(){
