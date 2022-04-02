@@ -25,73 +25,38 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 
 #define FOR(i,a,b) for(int i=a; i<b; i++)
 
-const int MOD = 1e9 + 7;
+const int MOD = 998244353;
 const int INF = 1e18;
 
-vector<int> vals;
+// int fact(int n){
+// 	int ans = 1;
+// 	for(int i = 2; i<=n; i++){
+
+// 	}
+// }
+
+int fact[1005];
 
 void pre(){
-
-	int fact = 1;
-	int i = 2;
-	while(true){
-		
-		if(fact > 1e12){
-			break;
-		}
-		vals.PB(fact);
-		fact = fact * i;
-		i++;
-
+	fact[0] = 1;
+	for(int i = 1; i<1005; i++){
+		fact[i] = fact[i-1] * i;
+		fact[i] = fact[i] % MOD;
 	}
-
 }
-
-int ans = INF;
-
 
 void solve(){
 
 	int n; cin>>n;
-	
-	debug((vals));
 
-	// I wanna reduce one number I can using factorials
-	//then use bits to solve it?
-	int ans = INF;
-	// map<int,
-
-	for(int i = 0; i<(1<<14); i++){
-
-		//
-		int tsum = 0;
-		int count = 0;
-		for(int j = 0; j < 14; j++){
-			if((i >> j) & 1){
-				//then i know that this should be included
-				tsum += vals[j];
-				count++;
-			}
-		}
-
-		int rem = n - tsum;
-		if(rem < 0){
-			continue;
-		}
-		// debug(rem);
-
-
-		for(int i = 0; i<40; i++){
-			// cout<<(1ll<<i)<<'\n';
-			if(rem & (1ll<<i)){
-				count++;
-			}
-		}
-
-		ans = min(ans, count);
+	if(n%2 == 1){
+		cout<<"0\n";
+		return;
 	}
 
-	cout<<ans<<'\n';
+	cout<< (fact[n/2]*fact[n/2]) % MOD <<'\n';
+
+
 
 }
 
@@ -106,9 +71,10 @@ signed main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	auto start = chrono::high_resolution_clock::now();
-	pre();
+
 	int t=1;
 	cin>>t;
+	pre();
 	while(t--){
 	  solve();
 	}

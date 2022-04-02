@@ -28,70 +28,15 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
-vector<int> vals;
-
-void pre(){
-
-	int fact = 1;
-	int i = 2;
-	while(true){
-		
-		if(fact > 1e12){
-			break;
-		}
-		vals.PB(fact);
-		fact = fact * i;
-		i++;
-
-	}
-
-}
-
-int ans = INF;
-
-
 void solve(){
-
 	int n; cin>>n;
-	
-	debug((vals));
-
-	// I wanna reduce one number I can using factorials
-	//then use bits to solve it?
-	int ans = INF;
-	// map<int,
-
-	for(int i = 0; i<(1<<14); i++){
-
-		//
-		int tsum = 0;
-		int count = 0;
-		for(int j = 0; j < 14; j++){
-			if((i >> j) & 1){
-				//then i know that this should be included
-				tsum += vals[j];
-				count++;
-			}
-		}
-
-		int rem = n - tsum;
-		if(rem < 0){
-			continue;
-		}
-		// debug(rem);
-
-
-		for(int i = 0; i<40; i++){
-			// cout<<(1ll<<i)<<'\n';
-			if(rem & (1ll<<i)){
-				count++;
-			}
-		}
-
-		ans = min(ans, count);
+	set<int> S;
+	for(int i = 0; i<n; i++){
+		int x; cin>>x;
+		S.insert(x);
 	}
 
-	cout<<ans<<'\n';
+	cout<<sz(S)<<'\n';
 
 }
 
@@ -106,9 +51,9 @@ signed main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	auto start = chrono::high_resolution_clock::now();
-	pre();
+
 	int t=1;
-	cin>>t;
+	// cin>>t;
 	while(t--){
 	  solve();
 	}

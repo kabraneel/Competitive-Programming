@@ -28,69 +28,61 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
-vector<int> vals;
+void solve(){
+	string s; cin>>s;
+	int n = s.length();
 
-void pre(){
+	int sum = 0;
+	for(auto v : s){
+		sum += v - '0';
+	}
 
-	int fact = 1;
-	int i = 2;
-	while(true){
-		
-		if(fact > 1e12){
+	int toadd = 9 - sum%9;
+	if(toadd == 9){
+		toadd = 0;
+		cout<<s[0];
+		cout<<"0";
+		for(int i = 1; i<n; i++){
+			cout<<s[i];			
+		}
+		cout<<"\n";
+		return;
+		// cout<<s<<'\n';
+		// return;
+	}
+
+	//add it right before the largest number is hit
+	int ind = -1;
+
+	for(int i = 0; i<n; i++){
+		if((s[i]-'0') > toadd){
+			ind = i;
 			break;
 		}
-		vals.PB(fact);
-		fact = fact * i;
-		i++;
-
 	}
 
-}
+	if(ind == -1){
+		s.push_back(toadd + '0');
+		cout<<s<<"\n";
+		return;
+	}
 
-int ans = INF;
+	if(ind == 0){
+		cout<<toadd;
+		cout<<s<<'\n';
+		return;
+	}
 
+	string ans;
+	for(int i = 0; i<ind; i++){
+		ans.PB(s[i]);
+	}
+	ans.PB(toadd + '0');
+	for(int i = ind; i<n; i++){
+		ans.PB(s[i]);
+	}
 
-void solve(){
-
-	int n; cin>>n;
 	
-	debug((vals));
-
-	// I wanna reduce one number I can using factorials
-	//then use bits to solve it?
-	int ans = INF;
-	// map<int,
-
-	for(int i = 0; i<(1<<14); i++){
-
-		//
-		int tsum = 0;
-		int count = 0;
-		for(int j = 0; j < 14; j++){
-			if((i >> j) & 1){
-				//then i know that this should be included
-				tsum += vals[j];
-				count++;
-			}
-		}
-
-		int rem = n - tsum;
-		if(rem < 0){
-			continue;
-		}
-		// debug(rem);
-
-
-		for(int i = 0; i<40; i++){
-			// cout<<(1ll<<i)<<'\n';
-			if(rem & (1ll<<i)){
-				count++;
-			}
-		}
-
-		ans = min(ans, count);
-	}
-
 	cout<<ans<<'\n';
 
 }
@@ -106,10 +98,12 @@ signed main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	auto start = chrono::high_resolution_clock::now();
-	pre();
+
 	int t=1;
 	cin>>t;
+	int count = 1;
 	while(t--){
+		cout<<"Case #"<<count++<<": ";
 	  solve();
 	}
 

@@ -28,70 +28,64 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
-vector<int> vals;
+const int N = 105;
+int n;
+int x;
+vector<pair<int,int>> arr(N);
 
-void pre(){
+// bool dp[N][10005];
+map<pair<int,int>,bool> dp;
 
-	int fact = 1;
-	int i = 2;
-	while(true){
-		
-		if(fact > 1e12){
-			break;
-		}
-		vals.PB(fact);
-		fact = fact * i;
-		i++;
+bool solver(int i, int target){
 
+	debug(i, target);
+	
+	if(i == 0 && target == 0){
+		return true;
 	}
+
+	if(i == 0){
+		return false;
+	}
+
+	if(target <= 0){
+		return false;
+	}
+
+
+	if(dp.find({i, target}) != dp.end()){
+		return dp[{i, target}];
+	}
+
+	return dp[{i,target}] = solver(i-1, target - arr[i-1].first) || solver(i-1, target - arr[i-1].second);
 
 }
 
-int ans = INF;
-
-
 void solve(){
-
-	int n; cin>>n;
 	
-	debug((vals));
+	int n; cin>>n;
+	int x; cin>>x;
 
-	// I wanna reduce one number I can using factorials
-	//then use bits to solve it?
-	int ans = INF;
-	// map<int,
-
-	for(int i = 0; i<(1<<14); i++){
-
-		//
-		int tsum = 0;
-		int count = 0;
-		for(int j = 0; j < 14; j++){
-			if((i >> j) & 1){
-				//then i know that this should be included
-				tsum += vals[j];
-				count++;
-			}
-		}
-
-		int rem = n - tsum;
-		if(rem < 0){
-			continue;
-		}
-		// debug(rem);
-
-
-		for(int i = 0; i<40; i++){
-			// cout<<(1ll<<i)<<'\n';
-			if(rem & (1ll<<i)){
-				count++;
-			}
-		}
-
-		ans = min(ans, count);
+	for(int i = 0; i<n; i++){
+		cin>>arr[i].first>>arr[i].second;
 	}
 
-	cout<<ans<<'\n';
+	
+	if(solver(n, x)){
+		cout<<"Yes\n";
+	}
+	else{
+		cout<<"No\n";
+	}
+
+	debug(dp);
+
+	// for(int i = 0; i<=n; i++){
+	// 	for(int j = 0; j<=x; j++){
+	// 		cout<<dp[i][j]<<" ";
+	// 	}
+	// 	cout<<'\n';
+	// }
 
 }
 
@@ -106,9 +100,9 @@ signed main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	auto start = chrono::high_resolution_clock::now();
-	pre();
+
 	int t=1;
-	cin>>t;
+	// cin>>t;
 	while(t--){
 	  solve();
 	}

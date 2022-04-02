@@ -28,70 +28,78 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
-vector<int> vals;
+void solve(){
+	int n; cin>>n;
+	vector<pair<int,int>> arr;
+	map<int,vector<int>> M;
 
-void pre(){
+	vector<int> a(n);
+	vector<int> b(n);
 
-	int fact = 1;
-	int i = 2;
-	while(true){
-		
-		if(fact > 1e12){
+
+	for(int i = 0; i<n; i++){
+		cin>>a[i];
+	}
+	for(int i = 0; i<n; i++){
+		cin>>b[i];
+		arr.push_back({b[i], a[i]});
+		M[b[i]].push_back(a[i]);
+	}
+
+	sort(all(arr));
+	vector<int> ans(n+1, -INF);
+	multiset<int, greater<int>> S;
+	ans[0] = 0;
+
+	vector<int> temp;
+	for(int i = 1; i<n+1; i++){
+		temp.PB(i-1);
+	}
+
+
+	for(auto v: temp){
+
+		if(M.find(v) != M.end()){
+
+			for(auto u: M[v]){
+				S.insert(u);
+			}
+
+			M.erase(v);
+		}
+
+
+		if(ans[v] == -INF){
 			break;
 		}
-		vals.PB(fact);
-		fact = fact * i;
-		i++;
+
+		debug(S);
+
+		// debug(ans);
+
+		if(sz(S) == 0){
+			break;
+		}
+
+		ans[v + 1] = max(ans[v+1], ans[v] + *S.begin());
+		S.erase(S.lower_bound(*S.begin()));
+		// ans[v.first+1] =  
 
 	}
 
-}
-
-int ans = INF;
-
-
-void solve(){
-
-	int n; cin>>n;
-	
-	debug((vals));
-
-	// I wanna reduce one number I can using factorials
-	//then use bits to solve it?
-	int ans = INF;
-	// map<int,
-
-	for(int i = 0; i<(1<<14); i++){
-
-		//
-		int tsum = 0;
-		int count = 0;
-		for(int j = 0; j < 14; j++){
-			if((i >> j) & 1){
-				//then i know that this should be included
-				tsum += vals[j];
-				count++;
-			}
-		}
-
-		int rem = n - tsum;
-		if(rem < 0){
-			continue;
-		}
-		// debug(rem);
-
-
-		for(int i = 0; i<40; i++){
-			// cout<<(1ll<<i)<<'\n';
-			if(rem & (1ll<<i)){
-				count++;
-			}
-		}
-
-		ans = min(ans, count);
+	debug(ans);
+	double fans = 0;
+	// for(auto v: ans){
+	// 	fans = max(fans, v/)
+	// }
+	for(int i = 1; i<n+1; i++){
+		fans = max(fans, ((1.0*ans[i] )/ (1.0 * (i))));
 	}
 
-	cout<<ans<<'\n';
+	cout<<setprecision(15);
+	cout<<fans<<'\n';
+
+
 
 }
 
@@ -106,7 +114,7 @@ signed main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	auto start = chrono::high_resolution_clock::now();
-	pre();
+
 	int t=1;
 	cin>>t;
 	while(t--){
