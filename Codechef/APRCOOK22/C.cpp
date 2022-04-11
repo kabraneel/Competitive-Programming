@@ -81,3 +81,6 @@ signed main(){
 	cerr <<fixed<<time_taken<<setprecision(9)<< " sec"<<endl;
 	return 0;
 }
+
+// SELECT * FROM (explode(split(lcase(regexp_replace(Page,'[^A-Za-z0-9_]','')),'_'))) as words FROM TableX
+// ( SELECT (explode(split(lcase(regexp_replace(Page,'[^A-Za-z0-9_]','')),'_'))) as words FROM TableX )

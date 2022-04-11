@@ -28,28 +28,31 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
-
-
 void solve(){
-	
-	int n; cin>>n;
-	int count = 1;
+	map<int,int> MX;
+	map<int,int> MY;
 
-	vector<int> arr(n);
-
-	for(int i = 0; i<n; i++){
-		cin>>arr[i];
+	for(int i = 0; i<3; i++){
+		int x,y; cin>>x>>y;
+		MX[x]++;
+		MY[y]++;
 	}
 
-	sort(all(arr));
-
-	for(int i = 0; i<n; i++){
-		if(arr[i] >= count){
-			count++;
+	for(auto v: MX){
+		if(v.second == 1){
+			cout<<v.first<<" ";
+			break;
 		}
 	}
 
-	cout<<count-1<<'\n';
+	for(auto v: MY){
+		if(v.second == 1){
+			cout<<v.first<<" ";
+			break;
+		}
+	}
+
+	cout<<'\n';
 
 }
 
@@ -66,11 +69,8 @@ signed main(){
 	auto start = chrono::high_resolution_clock::now();
 
 	int t=1;
-	cin>>t;
-	int count = 1;
+	// cin>>t;
 	while(t--){
-
-		cout<<"Case #" << count++<<": ";
 	  solve();
 	}
 

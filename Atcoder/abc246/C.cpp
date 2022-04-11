@@ -28,12 +28,10 @@ template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
 const int MOD = 1e9 + 7;
 const int INF = 1e18;
 
-
-
 void solve(){
-	
 	int n; cin>>n;
-	int count = 1;
+	int k; cin>>k;
+	int X; cin>>X;
 
 	vector<int> arr(n);
 
@@ -41,15 +39,38 @@ void solve(){
 		cin>>arr[i];
 	}
 
-	sort(all(arr));
-
+	vector<int> temp;
 	for(int i = 0; i<n; i++){
-		if(arr[i] >= count){
-			count++;
+		int mexc = arr[i]/X;
+		debug(mexc);
+		int used = 0;
+		if(mexc <= k){
+			used = mexc;
+			// k -= mexc;
+
 		}
+
+		else{
+			used = k;
+		}
+
+		temp.PB(arr[i] - used * X);
+		k -= used;
+
+		debug(k);
+
 	}
 
-	cout<<count-1<<'\n';
+	debug(k);
+
+	int fans = 0;
+	sort(all(temp), greater<int>());
+	debug(temp);
+	for(int i = k; i<n; i++){
+		fans += temp[i];
+	}
+
+	cout<<fans<<'\n';
 
 }
 
@@ -66,11 +87,8 @@ signed main(){
 	auto start = chrono::high_resolution_clock::now();
 
 	int t=1;
-	cin>>t;
-	int count = 1;
+	// cin>>t;
 	while(t--){
-
-		cout<<"Case #" << count++<<": ";
 	  solve();
 	}
 

@@ -48,6 +48,7 @@ void solve(){
 	for(int i = 0; i<4; i++){
 		tsum += arr[i][0];
 	}
+	debug(arr);
 
 	if(tsum < (int) 1e6){
 		cout<<"IMPOSSIBLE\n";
@@ -70,9 +71,13 @@ void solve(){
 
 	}
 
-	for(int i = 0; i< 4 - sz(ans); i++){
+	int n = sz(ans);
+
+	for(int i = 0; i < 4 - n; i++){
 		ans.PB(0);
 	}
+
+	debug(sz(ans));
 
 	for(auto v: ans){
 		cout<<v<<" ";
@@ -99,7 +104,7 @@ signed main(){
 	int count = 1;
 	while(t--){
 
-		cout<<"Case #" << count++<<":";
+		cout<<"Case #" << count++<<": ";
 	  solve();
 	}
 
