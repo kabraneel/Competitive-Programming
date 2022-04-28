@@ -1,4 +1,71 @@
-template<typename node,typename update>
+// na ho paega humse
+// nai_aati_coding
+// i love PD
+#include <bits/stdc++.h>
+#include <chrono>
+using namespace std;
+#define int long long
+#define PB push_back
+#define all(x) (x).begin(),(x).end()
+#define MP make_pair
+#define sz(x) (int)(x.size())
+
+template<typename T,typename T1>T amax(T &a,T1 b){if(b>a)a=b;return a;}
+template<typename T,typename T1>T amin(T &a,T1 b){if(b<a)a=b;return a;}
+
+#define FOR(i,a,b) for(int i=a; i<b; i++)
+
+const int MOD = 1e9 + 7;
+const int INF = 1e18;
+
+struct node{
+  int v = 0; // 1
+	// use more variables if you want more information
+	// these default values should be identity_element
+	node(){}
+	node(int val){
+    v = val; // 2
+	}
+	void merge(const node &l,const node &r){ // store the thing you wanna query
+
+    v = (l.v) ^ (r.v); // 3
+		// if we wanted the maximum, then we would do
+		// like v = max(l.v,r.v)
+	}
+};
+
+// example: add on a range: identity transformation = 0
+// old += new
+
+// if old is identity which is 0, then 0 + new which new
+
+struct update
+{
+	int v = 0; // 4
+	// use more variables if you want more information
+	// these default values should be identity_transformation
+	update(){}
+	update(int val){
+		v = val; // 5
+	}
+	// combine the current update with the other update (see keynotes)
+	void combine(update &other,const int32_t &tl,const int32_t &tr){
+
+  	v += other.v; // 6
+
+		// you can be sure that the "other" is newer than current
+
+	}
+	// store the correct information in the node x
+	void apply(node &x,const int32_t &tl,const int32_t &tr){
+
+		// no change in freq
+		x.v += (tr - tl + 1)*v; // 7
+
+	}
+};
+
+// template<typename node,typename update>
 struct segtree
 {
 	int len;
@@ -52,6 +119,7 @@ struct segtree
 		if(tl >= l && tr <= r){
 			return t[v];
 		}
+
 		pushdown(v,tl,tr);
 		int32_t tm = (tl + tr) >> 1;
 		node a = query(v<<1,tl,tm,l,r),b = query(v<<1|1,tm+1,tr,l,r),ans;
@@ -89,54 +157,66 @@ struct segtree
 };
 
 
-struct node
-{
-    int mx = -1e9;
-    int idx = -1;
-	// use more variables if you want more information
-	// these default values should be identity_element
-	node(){}
-	node(int val){
-        idx = val;
-        mx = 0;
-	}
-	void merge(const node &l,const node &r){ // store the thing you wanna query
 
-        mx = max(l.mx, r.mx);
-        if (mx == l.mx)  idx = l.idx;
-        else idx = r.idx;
+void solve(){
+  int n,q; cin>>n>>q;
+  segtree s(n);
+  vector<int> arr(n);
 
-		// if we wanted the maximum, then we would do
-		// like v = max(l.v,r.v)
-	}
-};
+  for(int i = 0; i<n; i++) cin>>arr[i];
 
-// example: add on a range: identity transformation = 0
-// old += new
 
-// if old is identity which is 0, then 0 + new which new
+  for(int i = 0; i<n; i++){
+    s.rupd(i,i, arr[i]);
+  }
 
-struct update
-{
-	int v = 0; // 4
-	// use more variables if you want more information
-	// these default values should be identity_transformation
-	update(){}
-	update(int val){
-		v = val; // 5
-	}
-	// combine the current update with the other update (see keynotes)
-	void combine(update &other,const int32_t &tl,const int32_t &tr){
-		v += other.v; // 6
+  // for(int i = 0; i<n; i++){
+  //   cout<< s.query(i,i).v << " ";
+  // }
+  // cout<<'\n';
 
-		// you can be sure that the "other" is newer than current
+  while(q--){
+    int x; cin>>x;
+    if(x == 1){
+      int u,v,t; cin>>u>>v>>t;
+      s.rupd(u-1,v-1,t);
+    }
+    else{
+      int u; cin>>u;
+      cout<<s.query(u-1,u-1).v<<'\n';
+    }
 
-	}
-	// store the correct information in the node x
-	void apply(node &x,const int32_t &tl,const int32_t &tr){
+    // for(int i = 0; i<n; i++){
+    //   cout<< s.query(i,i).v << " ";
+    // }
+    // cout<<'\n';
+  }
 
-		// no change in freq
-		x.mx += v;
+}
 
-	}
-};
+signed main(){
+
+  #ifndef ONLINE_JUDGE
+  freopen("/home/kabraneel/coding/inputfa.txt", "r", stdin);
+  freopen("/home/kabraneel/coding/outputfa.txt", "w", stdout);
+  freopen("/home/kabraneel/coding/error.txt","w",stderr);
+  #endif
+
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  auto start = chrono::high_resolution_clock::now();
+
+  int t=1;
+  // cin>>t;
+  while(t--){
+    solve();
+  }
+
+  auto end = chrono::high_resolution_clock::now();
+  double time_taken = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
+
+  time_taken *= 1e-9;
+
+  cerr <<fixed<<time_taken<<setprecision(9)<< " sec"<<endl;
+  return 0;
+}
