@@ -14,8 +14,8 @@ int main(){
      cin>>arr[i];
   }
 
-  stack<int> stk;
-  stk.push(0);
+  stack<int> stck;
+  stck.push(0);
 
   for(int i = 1; i<n; i++){
     while(!stck.empty() && arr[i] > arr[stck.top()]){

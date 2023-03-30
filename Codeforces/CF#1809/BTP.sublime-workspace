@@ -1,0 +1,1079 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"lo",
+				"lowestNum"
+			],
+			[
+				"qu",
+				"queryInfo"
+			],
+			[
+				"os",
+				"oset2"
+			],
+			[
+				"fe",
+				"fenw"
+			],
+			[
+				"con",
+				"contest\tcontest"
+			],
+			[
+				"co",
+				"contest\tcontest"
+			],
+			[
+				"cyc",
+				"cycleEnd"
+			],
+			[
+				"cy",
+				"cycleStart"
+			],
+			[
+				"cycle",
+				"cycleStart"
+			],
+			[
+				"pre",
+				"prefixes"
+			],
+			[
+				"pref",
+				"prefixes"
+			],
+			[
+				"pri",
+				"prefixes"
+			],
+			[
+				"f",
+				"factorisation"
+			],
+			[
+				"p",
+				"points"
+			],
+			[
+				"l",
+				"locations"
+			],
+			[
+				"cur",
+				"currSet"
+			],
+			[
+				"curr",
+				"currSet"
+			],
+			[
+				"m",
+				"getMST"
+			],
+			[
+				"an",
+				"ansgl"
+			],
+			[
+				"ma",
+				"maxSubArraySum"
+			],
+			[
+				"cn",
+				"contest\tcontest"
+			],
+			[
+				"pa",
+				"packets"
+			],
+			[
+				"packe",
+				"packets"
+			],
+			[
+				"pack",
+				"packetId"
+			],
+			[
+				"soc",
+				"socketfdSub"
+			],
+			[
+				"so",
+				"socketfdAdd"
+			],
+			[
+				"su",
+				"socketfdMul"
+			],
+			[
+				"s",
+				"socketfdIDiv"
+			],
+			[
+				"sock",
+				"socketfdTCP"
+			],
+			[
+				"se",
+				"serverAddressTCP"
+			],
+			[
+				"cr",
+				"correctIP"
+			],
+			[
+				"sin",
+				"sin_port"
+			],
+			[
+				"to",
+				"toDisplay"
+			],
+			[
+				"me",
+				"message"
+			],
+			[
+				"de",
+				"decodeFrame"
+			],
+			[
+				"ti",
+				"toDisplay"
+			],
+			[
+				"pi",
+				"printf"
+			],
+			[
+				"fr",
+				"frameStruct"
+			],
+			[
+				"psu",
+				"push_back"
+			],
+			[
+				"a",
+				"orAndMax"
+			],
+			[
+				"r",
+				"rminDist"
+			],
+			[
+				"pac",
+				"packetInfo"
+			],
+			[
+				"q",
+				"queueID"
+			],
+			[
+				"quue",
+				"queues"
+			],
+			[
+				"cu",
+				"currPacket"
+			],
+			[
+				"ci",
+				"city_to"
+			],
+			[
+				"t",
+				"totalSuccess"
+			],
+			[
+				"bus",
+				"busyTime"
+			],
+			[
+				"re",
+				"remPkt"
+			],
+			[
+				"pro",
+				"probGen"
+			],
+			[
+				"tran",
+				"transmitAll"
+			],
+			[
+				"n",
+				"myNetwork"
+			],
+			[
+				"gen",
+				"generateFrame"
+			],
+			[
+				"pr",
+				"print_flag"
+			],
+			[
+				"fa",
+				"fast_pow"
+			],
+			[
+				"bin",
+				"binsearch"
+			],
+			[
+				"cont",
+				"contest"
+			],
+			[
+				"po",
+				"posMike"
+			],
+			[
+				"pos",
+				"posJoe"
+			],
+			[
+				"ps",
+				"posMike"
+			],
+			[
+				"men",
+				"menMike"
+			],
+			[
+				"perm",
+				"permutations"
+			],
+			[
+				"for",
+				"forfreq"
+			],
+			[
+				"cno",
+				"contest"
+			],
+			[
+				"in",
+				"inverse"
+			],
+			[
+				"pu",
+				"push_back"
+			],
+			[
+				"print",
+				"printline1"
+			],
+			[
+				"fi",
+				"farthest_min_left"
+			],
+			[
+				"c",
+				"contest"
+			],
+			[
+				"num",
+				"num_odd"
+			],
+			[
+				"percol",
+				"percolation"
+			],
+			[
+				"gues",
+				"guesswords"
+			],
+			[
+				"help",
+				"helperprint"
+			],
+			[
+				"set",
+				"set_xticklabels"
+			],
+			[
+				"cot",
+				"contest"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/User/test.sublime-build",
+					""
+				],
+				[
+					"Packages/User/test.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/test.sublime-build",
+					"Build and Run"
+				]
+			],
+			[
+				"Packages/User/test.sublime-build",
+				"Build and Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/test.sublime-build",
+					""
+				],
+				[
+					"Packages/User/test.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/test.sublime-build",
+					"Build and Run"
+				]
+			],
+			[
+				"Packages/User/test.sublime-build",
+				"Build and Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"sni",
+				"Snippet: contest"
+			],
+			[
+				"Snippet: ",
+				"Snippet: contest"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 142.0,
+		"history":
+		[
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/kabraneel/8th_sem/BTP/faset_demo/faset_demo"
+	],
+	"file_history":
+	[
+		"/home/kabraneel/coding/CP/Codeforces/CF#1809/B",
+		"/home/kabraneel/coding/CP/Codeforces/Prac/A.py",
+		"/home/kabraneel/coding/CP/Codeforces/Prac/292E.cpp",
+		"/home/kabraneel/coding/CP/Codeforces/Prac/474F.cpp",
+		"/home/kabraneel/coding/CP/Codeforces/Prac/459D.cpp",
+		"/home/kabraneel/coding/CP/Codeforces/Prac/61E.cpp",
+		"/home/kabraneel/coding/CP/Codeforces/Prac/380C.cpp",
+		"/home/kabraneel/.config/sublime-text-3/Packages/User/contest.sublime-snippet",
+		"/home/kabraneel/coding/CP/Concepts/orderedset.cpp",
+		"/home/kabraneel/coding/concepts/fenwick.cpp",
+		"/home/kabraneel/coding/concepts/segtree.cpp",
+		"/home/kabraneel/coding/Contests/inputfa.txt",
+		"/home/kabraneel/coding/error.txt",
+		"/home/kabraneel/coding/outputfa.txt",
+		"/home/kabraneel/coding/inputfa.txt",
+		"/home/kabraneel/coding/CP/ICPC/ICPC_PRAC/A.cpp",
+		"/home/kabraneel/coding/CP/ICPC/ICPC_PRAC/E.cpp",
+		"/home/kabraneel/coding/Contests/Q3.cpp",
+		"/home/kabraneel/coding/Contests/Q6.cpp",
+		"/home/kabraneel/coding/Contests/Q5.cpp",
+		"/home/kabraneel/coding/Contests/Q4.cpp",
+		"/home/kabraneel/coding/Contests/Q1.cpp",
+		"/home/kabraneel/coding/Contests/A.cpp",
+		"/home/kabraneel/coding/Contests/Q2.cpp",
+		"/home/kabraneel/8th_sem/BTP/faset_demo/faset_demo/companies/entity_dict.json",
+		"/home/kabraneel/8th_sem/BTP/faset_demo/faset_demo/companies/entity_map.json",
+		"/home/kabraneel/8th_sem/BTP/faset_demo/faset_demo/companies/queries.json",
+		"/home/kabraneel/8th_sem/BTP/faset_demo/faset_demo/companies/list_dict.json",
+		"/home/kabraneel/8th_sem/BTP/faset_demo/faset_demo/companies/list_map.json",
+		"/home/kabraneel/8th_sem/BTP/faset_demo/faset_demo/companies/egoset_description_fixed_5.json",
+		"/home/kabraneel/8th_sem/BTP/faset_demo/faset_demo/companies/entities_scores.tsv",
+		"/home/kabraneel/8th_sem/BTP/faset_demo/faset_demo/companies/etolist_matrix.npz",
+		"/home/kabraneel/8th_sem/BTP/faset_demo/faset_demo/companies/categories_scores.tsv",
+		"/home/kabraneel/Downloads/fuse.tex",
+		"/home/kabraneel/coding/Contests/B.cpp",
+		"/home/kabraneel/coding/Contests/C.cpp",
+		"/home/kabraneel/coding/Contests/1800.md",
+		"/home/kabraneel/coding/Contests/D.cpp",
+		"/home/kabraneel/coding/Contests/E.cpp",
+		"/home/kabraneel/coding/Contests/test.cpp",
+		"/home/kabraneel/6th_sem/Computational_Methods/lab3/Q4.py",
+		"/home/kabraneel/6th_sem/Computational_Methods/lab3/A.py",
+		"/home/kabraneel/coding/Contests/expout.txt",
+		"/home/kabraneel/coding/InterIIT/A.py",
+		"/home/kabraneel/coding/InterIIT/exampleOut.txt",
+		"/home/kabraneel/coding/InterIIT/generateInput.cpp",
+		"/home/kabraneel/coding/InterIIT/exOut.in",
+		"/home/kabraneel/6th_sem/Computational_Methods/plots.py",
+		"/home/kabraneel/6th_sem/Computational_Methods/lab1/A1_111901057/Q2.py",
+		"/home/kabraneel/6th_sem/Computational_Methods/lab1/A1_111901057/Q4.py",
+		"/home/kabraneel/6th_sem/Computational_Methods/lab2/A2_111901057/Q5.py",
+		"/home/kabraneel/coding/InterIIT/script",
+		"/home/kabraneel/coding/CP/Concepts/nextgreater.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q3/test1.out",
+		"/home/kabraneel/coding/Petrichor23/Q3/Neel.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q3/3.in",
+		"/home/kabraneel/coding/Petrichor23/Q3/C.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q4/correct.cpp",
+		"/home/kabraneel/coding/CP/Concepts/modular.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q4/D.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q2/script",
+		"/home/kabraneel/coding/Petrichor23/Q3/1.out",
+		"/home/kabraneel/coding/Petrichor23/Q3/2.out",
+		"/home/kabraneel/coding/Petrichor23/Q3/2.in",
+		"/home/kabraneel/coding/Petrichor23/Q3/1.in",
+		"/home/kabraneel/coding/Petrichor23/Q3/11.in",
+		"/home/kabraneel/coding/Petrichor23/Q3/test.in",
+		"/home/kabraneel/coding/Petrichor23/Q3/test.out",
+		"/home/kabraneel/coding/Petrichor23/Q3/gen.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q3.cpp/gen.cpp",
+		"/home/kabraneel/coding/Petrichor23/C.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q2/gen.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q1/gen.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q2/tempOut",
+		"/home/kabraneel/coding/Petrichor23/Q2/B.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q1/18.in",
+		"/home/kabraneel/coding/Petrichor23/Q1/18.out",
+		"/home/kabraneel/coding/Petrichor23/Q1/tempOut",
+		"/home/kabraneel/coding/Petrichor23/Q1/A.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q2/solve.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q2/17.out",
+		"/home/kabraneel/coding/Petrichor23/Q2/17.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/Nideesh.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q1/mishra.cpp",
+		"/home/kabraneel/coding/Petrichor23/Q2/16.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/9.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/9.out",
+		"/home/kabraneel/coding/Petrichor23/Q2/7.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/7.out",
+		"/home/kabraneel/coding/Petrichor23/Q2/test.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/1.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/2.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/3.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/13.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/12.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/11.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/10.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/8.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/6.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/5.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/4.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/14.in",
+		"/home/kabraneel/coding/Petrichor23/Q2/15.in",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab9_network/lab9_network/CorrectPackets.txt",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab9_network/lab9_network/Q3.py",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab9_network/lab9_network/tempOut",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab9_network/lab9_network/Q2.py",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab9_network/lab9_network/main.py",
+		"/home/kabraneel/coding/Ecom/unnamed-project/e-commerce/package-lock.json",
+		"/home/kabraneel/coding/Ecom/unnamed-project/e-commerce/package.json",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab8_network/lab8_network/compute.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab8_network/lab8_network/inetMul.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab8_network/lab8_network/inetSub.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab8_network/lab8_network/inetAdd.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab8_network/lab8_network/inetiDiv.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab8_network/lab8_network/idiv.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab8_network/lab8_network/inetd.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab8_network/lab8_network/add.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab8_network/lab8_network/square.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab8_network/lab8_network/sub.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab8_network/lab8_network/mul.cpp",
+		"/home/kabraneel/coding/Ecom/unnamed-project/e-commerce/package-locl.json",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab7_network/lab7_network/server.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab6_network/tests/rr.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab8_network/lab8_network/iDiv.cpp",
+		"/home/kabraneel/7th_sem/Networking/Lab/lab7_network/lab7_network/temp.cpp",
+		"/home/kabraneel/Documents/ApplyInfo/Applications",
+		"/home/kabraneel/Documents/ApplyInfo/skills"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 51.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.Terminus":
+	{
+		"height": 153.0
+	},
+	"output.Terminus 10":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 11":
+	{
+		"height": 174.0
+	},
+	"output.Terminus 12":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 13":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 14":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 15":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 16":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 17":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 18":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 19":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 2":
+	{
+		"height": 183.0
+	},
+	"output.Terminus 20":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 21":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 22":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 23":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 24":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 25":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 26":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 27":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 28":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 29":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 3":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 30":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 31":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 32":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 33":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 34":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 35":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 36":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 37":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 38":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 39":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 4":
+	{
+		"height": 146.0
+	},
+	"output.Terminus 40":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 41":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 42":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 43":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 44":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 45":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 46":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 47":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 48":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 49":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 5":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 50":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 51":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 52":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 53":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 54":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 55":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 56":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 57":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 58":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 59":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 6":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 60":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 61":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 62":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 63":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 64":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 65":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 66":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 67":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 68":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 69":
+	{
+		"height": 150.0
+	},
+	"output.Terminus 7":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 70":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 71":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 72":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 73":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 74":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 75":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 76":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 77":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 78":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 8":
+	{
+		"height": 166.0
+	},
+	"output.Terminus 9":
+	{
+		"height": 166.0
+	},
+	"output.exec":
+	{
+		"height": 247.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/test.sublime-build",
+	"project": "BTP.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 625.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 475.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 336.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

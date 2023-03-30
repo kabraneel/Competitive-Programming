@@ -48,5 +48,12 @@ int main(){
     oset1.insert(x);
 
 
+    // to erase, this method is required 
+    int rank = oset1.order_of_key(v);//Number of elements that are less than v in t
+    auto it = oset1.find_by_order(rank); //Iterator that points to the (rank+1)th element in t
+    oset1.erase(it);
+  }
+
   // cout<<ans<<'\n';
+    return 0;
 }
